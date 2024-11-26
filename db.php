@@ -6,15 +6,21 @@ class DB{
     protected $table;
 
     function __construct($table){
-        $this->tble=$table;
+        $this->table=$table;
         $this->pdo=new PDO($this->dsn,'root','');
+    }
+
+    function all(){
+        return $this->q("SELECT * FROM $this->table");
     }
 
     function q($sql){
         return $this->pdo->query($sql)->fetchAll();
     }
 
+
 }
+
 
 function dd($array){
     echo "<pre>";
@@ -22,11 +28,11 @@ function dd($array){
     echo "</pre>";
 }
 
+
 $DEPT=new DB('dept');
 
-$dept=$DEPT->q("SELECT * FROM dept");
+//$dept=$DEPT->q("SELECT * FROM dept");
+$dept=$DEPT->all();
 
 dd($dept);
 
-
-?>
