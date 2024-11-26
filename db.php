@@ -124,7 +124,7 @@ $DEPT=new DB('dept');
 //$dept=$DEPT->q("SELECT * FROM dept");
 $dept=$DEPT->find(['code'=>'404']);
 //$DEPT->del(['code'=>'504']);
-//$DEPT->save(['code'=>'504']);
+//先新增一筆自動產生id7後,再執行下列編輯 $DEPT->save(['code'=>'504']);
 $DEPT->save(['code'=>'504','id'=>'7','name'=>'資訊發展部']);
 dd($dept);
 
