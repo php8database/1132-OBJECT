@@ -119,6 +119,7 @@ $DEPT=new DB('dept');
 //$dept=$DEPT->q("SELECT * FROM dept");
 $dept=$DEPT->find(['code'=>'404']);
 //$DEPT->del(['code'=>'504']);
-$DEPT->save(['code'=>'504','id'=>'7','name'=>'資訊部']);
+$DEPT->save(['code'=>'504']);
+//$DEPT->save(['code'=>'504','id'=>'7','name'=>'資訊部']);
 dd($dept);
 
